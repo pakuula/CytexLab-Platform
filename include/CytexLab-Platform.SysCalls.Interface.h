@@ -62,6 +62,7 @@ namespace CytexLab {
                 virtual INT64 WriteConsole(HANDLE hOut, LPCECHAR Buffer) = 0;
                 virtual INT64 ReadConsole(HANDLE hIn, LPECHAR Buffer, INT64 BufferSize) = 0;
                 virtual IFile* OpenFile(LPCECHAR FileName, INT64 Mode) = 0;
+                virtual void DestroyFile(IFile* File) = 0;
             };
         }
     }
