@@ -29,6 +29,7 @@ public:
     INT64 WriteConsole(HANDLE hOut, LPCECHAR Buffer) override;
     INT64 ReadConsole(HANDLE hIn, LPECHAR Buffer, INT64 BufferSize) override;
     CytexLab::SysCalls::Interface::IFile* OpenFile(LPCECHAR FileName, INT64 Mode) override;
+    void DestroyFile(CytexLab::SysCalls::Interface::IFile* File) override;
 };
 
 #endif //CYTEXLAB_CYTEXLAB_PLATFORM_SYSCALLS_LIB_WINDOWS_SYSCALLSIMPL_H

@@ -147,3 +147,12 @@ CytexLab::SysCalls::Interface::IFile *SysCallsWindowsImpl::OpenFile(LPCECHAR Fil
     ::HeapFree(heap, 0, mem);
     return static_cast<CytexLab::SysCalls::Interface::IFile*>(file);
 }
+
+void SysCallsWindowsImpl::DestroyFile(CytexLab::SysCalls::Interface::IFile *File) {
+    if (File == NULLPTR) return;
+
+    File->Close();
+
+    HANDLE heap = ::GetProcessHeap();
+    ::HeapFree(heap, 0, File);
+}
